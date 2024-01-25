@@ -8,23 +8,19 @@
 
 ### 1 - Calculate the voltage at Node1. Show your work completely using Kirchhoff’s Law to derive the final voltage divider equation
 
-V_out = V_in * (R_2 / (R_1 + R_2))
-V_out = 5 V * (100 Ohms / (100 Ohms + 100 Ohms))
+V_out = V_in * (R_2 / (R_1 + R_2)) <br />
+V_out = 5 V * (100 Ohms / (100 Ohms + 100 Ohms)) <br />
 V_out = 2.5 V
 
 ### 2 - What if R2 was 850 ohm? What would the voltage at Node1 be? Show your work
 
-V_out = V_in * (R_2 / (R_1 + R_2))
-V_out = 5 V * (850 Ohms / (100 Ohms + 850 Ohms))
-V_out =  4.47 V
-
-Lorem ipsum
+V_out = V_in * (R_2 / (R_1 + R_2)) <br />
+\\ V_out = 5 V * (850 Ohms / (100 Ohms + 850 Ohms)) <br />
+\\ V_out =  4.47 V
 
 ### 3 - Attach an image of the plot generated (“Export Plot Images” in the upper right hand corner of the plot). Is this expected behavior? Why or why not?
 
 ![Alt text](image.png)
-
-Lorem ipsum
 
 ### 4 - List three scenarios where a voltage divider would be useful
 

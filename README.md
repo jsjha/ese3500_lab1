@@ -1,20 +1,28 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/x_MqueB0)
 # lab1-power
 
-    * Name: 
-    * Description of hardware: (embedded hardware, laptop, etc) 
+    * Name: Jessi Jha
+    * Description of hardware: Laptop,  
 
 ## Part A: Voltage Regulator
 
 ### 1 - Calculate the voltage at Node1. Show your work completely using Kirchhoff’s Law to derive the final voltage divider equation
 
-Lorem ipsum
+V_out = V_in * (R_2 / (R_1 + R_2))
+V_out = 5 V * (100 Ohms / (100 Ohms + 100 Ohms))
+V_out = 2.5 V
 
 ### 2 - What if R2 was 850 ohm? What would the voltage at Node1 be? Show your work
+
+V_out = V_in * (R_2 / (R_1 + R_2))
+V_out = 5 V * (850 Ohms / (100 Ohms + 850 Ohms))
+V_out =  4.47 V
 
 Lorem ipsum
 
 ### 3 - Attach an image of the plot generated (“Export Plot Images” in the upper right hand corner of the plot). Is this expected behavior? Why or why not?
+
+![Alt text](image.png)
 
 Lorem ipsum
 

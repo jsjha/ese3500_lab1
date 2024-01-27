@@ -2,7 +2,7 @@
 # lab1-power
 
     * Name: Jessi Jha
-    * Description of hardware: Laptop,  
+    * Description of hardware: Laptop, Lab Tools, Circuit Elements (inductors, resistors, capacitors, transistor), ATmega328PB Xplained Mini board.
 
 ## Part A: Voltage Regulator
 
@@ -30,19 +30,29 @@ V_out =  4.47 V
 
 ### 5 - When does the MOSFET (“switch”) become active - when the pulse of the clock (CLK1) is high or low? Why?
 
-Because we used a P-MOSFET, the transistor allows current to pass when there is 0V applied to the gate. Thus the "switch" becomes active when 
+We used a P-MOSFET in this Buck Converter, thus the transistor allows current to pass when there is 0V applied to the gate. This means the "switch" becomes active when the pulse of the clock is low.
 
 ### 6 - In order for Vout to be 3.3V, what duty cycle should be selected for the clock (CLK1)? What about for 2V? Do the values make sense? Why or why not?
 
-Lorem ipsum
+Vout = 3.3 V:
+The dudty cycle is 0.354.
+
+Vout = 2 V:
+The dudty cycle is 0.52.
+
+It makes sense that the lower the duty cycle the higher the output voltage - remember, we are using a P-MOSFET in this configuration. This means that current flows across the transistor when the clock is low, therefore the capacitors also charge when the clock is low. If we have a lower duty cycle (i.e., more of the time the clock is low) we are charging our capacitors for longer, leadering to an overall higher output voltage.
 
 ### 7 - Zoom into 2.8V to 5.0V. Explain the behavior you see - namely, why is there a spike at around 100us and why is the steady state output not a straight horizontal line? Attach an image of the generated plot
 
-Lorem ipsum
+Let's consider the part of the circuit that occurs after the transistor (or "switch"). We can consider this an RLC circuit, where Vout is defined by a damped wave equation. The damping coefficient (which can be found using circuit analysis tecniques) determines how Vout will change from its transient to steady state.
+
+![Alt text](image-5.png)
 
 ### 8 - Explain the relationship between these three currents. (Hint: KCL) Is this expected? Why or why not? Attach an image of the generated plot
 
-Lorem ipsum
+The sum of these three currents (the current through the diode, the current through the transistor, and the current through the inductor) adds to zero. In other words, yes, KCL holds, as the current through the node connecting these three components adds to zero.
+
+![Alt text](image-6.png)
 
 ### 9 - Attach an image of the generated plot
 
@@ -52,7 +62,7 @@ Lorem ipsum
 
 ### 10 - Explain the relationship between these three currents. (Hint: KCL) Is this expected? Why or why not?
 
-Lorem ipsum
+The sum of these three currents (the current through the diode, the current through the transistor, and the current through the inductor) adds to zero. In other words, yes, KCL holds, as the current through the node connecting these three components adds to zero.
 
 ## Part B: Arduino Power Management
 
@@ -60,14 +70,14 @@ Lorem ipsum
 
 | **Jack**  | **USB**  | **Power Source?**  | **NODE1**  | **NODE2**  | **NODE3**  |
 |---------- |--------- |------------------- |----------- |----------- |----------- |
-| 0V        | 5V       |                    |            |            |            |
-| 10V       | 0V       |                    |            |            |            |
-| 10V       | 5V       |                    |            |            |            |
-| 5V        | 5V       |                    |            |            |            |
+| 0V        | 5V       |        USB         |  131.2 uV  |    0.00V   |  61.51 uV  |
+| 10V       | 0V       |        Jack        | -1.319 mV  |  751.4 mV  |  -1.759 V  |
+| 10V       | 5V       |        Both        | -1.014 mV  |   5.00 V   |   2.500 V  |
+| 5V        | 5V       |        Both        | -1.014 mV  |  1.894 V   | -59.76 nV  |
 
 ### 12 - Is it possible to connect the barrel jack voltage directly to the non-inverting input of the op amp and still get the desired output? If not, what changes would need to be made to the circuit?
 
-Lorem ipsum
+Well if you connect the barrel jack to the non-inverting input of the op amp, then to voltage difference between the two pins would be zero. Since the output of the op amp is proportional to the differnce between the two input pins, our output would be zero (which is not what we want)! In order to fix this, we would need to connect one of the pins to a different voltage source, or perhaps connect one of the input pins to the output of voltage divider (to ensure a diffeence between the two inputs).
 
 ### 13 - Why do you think that 3.3V is used as the reference voltage for the op-amp in this circuit and why is the voltage divider needed?
 
@@ -81,14 +91,14 @@ The output is about 20.77 V.
 
 ### 15 - Keeping the input voltage the same while changing the PWM to 20%, 35% and 50%. Measure the output voltage for each PWM. What is the relationship between input voltage, PWM and output voltage?
 
-For PWM = 50%:
-The output is about 20.77 V
+For PWM = 50%:  <br/>
+The output is about 20.77 V  <br/>
 
 For PWM = 35%:
-The output is about 16.53 V
+The output is about 16.53 V  <br/>
 
-For PWM = 35%:
-The output is about 12.70 V
+For PWM = 35%:  <br/>
+The output is about 12.70 V  <br/>
 
 It apears that the larger the duty cycle, the larger the output voltage is. This makes sense because was we decrease the duty cycle, the amount of time the transistor "switch" is on decreases. Thus, the inductor and capacitor have less time to charge, meaning Vout will be less.
 

@@ -2,7 +2,7 @@
 # lab1-power
 
     * Name: Jessi Jha
-    * Description of hardware: Laptop, Lab Tools, Circuit Elements (inductors, resistors, capacitors, transistor), ATmega328PB Xplained Mini board.
+    * Description of hardware: Laptop, Lab Tools, Circuit Elements (inductors, resistors, capacitors, transistor), ATmega328PB Xplained Mini board
 
 ## Part A: Voltage Regulator
 
@@ -145,7 +145,8 @@ Linear regulators are primarily used for low voltage drops because the power eff
 
 ### 20 - Attach an image of your schematic and the share link. (File > Link & Share)
 
-Lorem ipsum
+![Alt text](image-7.png) <br/>
+https://www.circuitlab.com/circuit/vhk6tfk2e5mk/ese-3500-lab-1-buck-boost-regulator/
 
 ### 21 - For a given input voltage, attach a plot showing the schematic demonstrating buck (step down) capabilities
 

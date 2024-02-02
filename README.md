@@ -35,10 +35,10 @@ We used a P-MOSFET in this Buck Converter, thus the transistor allows current to
 ### 6 - In order for Vout to be 3.3V, what duty cycle should be selected for the clock (CLK1)? What about for 2V? Do the values make sense? Why or why not?
 
 Vout = 3.3 V:
-The dudty cycle is 0.354.
+The duty cycle is 0.354.
 
 Vout = 2 V:
-The dudty cycle is 0.52.
+The duty cycle is 0.52.
 
 It makes sense that the lower the duty cycle the higher the output voltage - remember, we are using a P-MOSFET in this configuration. This means that current flows across the transistor when the clock is low, therefore the capacitors also charge when the clock is low. If we have a lower duty cycle (i.e., more of the time the clock is low) we are charging our capacitors for longer, leadering to an overall higher output voltage.
 
@@ -70,10 +70,10 @@ The sum of these three currents (the current through the diode, the current thro
 
 | **Jack**  | **USB**  | **Power Source?**  | **NODE1**  | **NODE2**  | **NODE3**  |
 |---------- |--------- |------------------- |----------- |----------- |----------- |
-| 0V        | 5V       |        USB         |  131.2 uV  |    0.00V   |  61.51 uV  |
-| 10V       | 0V       |        Jack        | -1.319 mV  |  751.4 mV  |  -1.759 V  |
-| 10V       | 5V       |        Both        | -1.014 mV  |   5.00 V   |   2.500 V  |
-| 5V        | 5V       |        Both        | -1.014 mV  |  1.894 V   | -59.76 nV  |
+| 0V        | 5V       |        USB         |   4.999 V  | -1.014 mV  |   2.499 V  |
+| 10V       | 0V       |        Jack        |   5.001 V  |    5.00 V  |   2.500 V  |
+| 10V       | 5V       |        Both        |   5.001 V  |    5.00 V  |   2.500 V  |
+| 5V        | 5V       |        Both        |   4.306 V  |   4.307 V  |   1.806 V  |
 
 ### 12 - Is it possible to connect the barrel jack voltage directly to the non-inverting input of the op amp and still get the desired output? If not, what changes would need to be made to the circuit?
 
@@ -81,7 +81,7 @@ Well if you connect the barrel jack to the non-inverting input of the op amp, th
 
 ### 13 - Why do you think that 3.3V is used as the reference voltage for the op-amp in this circuit and why is the voltage divider needed?
 
-Lorem ipsum
+We use 3.3 V as a reference voltage because we want the non-inverting input to be greater than the inverting input. However, we need the voltage divider because so that the voltage difference between the terminals is not so large that the op-amp stops working in the linear regime.
 
 ## Part C: Boost Converter Implementation
 
@@ -123,11 +123,11 @@ One way to improve the performance of the circuit is to reduce noise. You could 
 
 ### 18 - Assuming an ideal linear regulator (i.e. the current that goes into the linear regulator is the same value for output current)  and knowing that the power equation is PWR = V * I, what would be the power efficiency of a 5.0V to 3.3V linear regulator? Why are linear regulators primarily used for low voltage drops from input to output?
 
-PWR = (5 V - 3.3 V)*I_load = 2.7 V * I_load  <br/>
+PWR_in = 5 V * I_load  <br/>
 
-PWR_dissipated = (5 V - 3.3 V)*I_load + (5 V)*I_GND = 7.7 V * I_load <br/>
+PWR_out = 3.3 V * I_load <br/>
 
-PWR_efficiency = 2.7 V * I_load / 7.7 V * I_load = 0.35
+PWR_efficiency = 3.3 V * I_load / 5 V * I_load = 0.66
 
 Linear regulators are primarily used for low voltage drops because the power efficiency decreases as you increase the voltage drop.
 
@@ -150,12 +150,11 @@ https://www.circuitlab.com/circuit/vhk6tfk2e5mk/ese-3500-lab-1-buck-boost-regula
 
 ### 21 - For a given input voltage, attach a plot showing the schematic demonstrating buck (step down) capabilities
 
-Lorem ipsum
+![Alt text](image-10.png)
 
 ### 22 - For the same input voltage as Question 21, attach a plot showing the schematic demonstrating boost (step up) capabilities
 
-Lorem ipsum
-
+![Alt text](image-9.png)
 ## Github Repo Submission Resources
 
 * [ESE5160 Example Repo Submission](https://github.com/ese5160/example-repository-submission)

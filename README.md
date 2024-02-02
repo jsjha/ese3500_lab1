@@ -154,7 +154,7 @@ https://www.circuitlab.com/circuit/vhk6tfk2e5mk/ese-3500-lab-1-buck-boost-regula
 
 ### 22 - For the same input voltage as Question 21, attach a plot showing the schematic demonstrating boost (step up) capabilities
 
-![Alt text](image-9.png)
+![Alt text](image-11.png)
 ## Github Repo Submission Resources
 
 * [ESE5160 Example Repo Submission](https://github.com/ese5160/example-repository-submission)
